@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin"  group="authentication">
+    <name>Authentication - Web Server</name>
+    <author>Laurent Opprecht</author>
+    <creationDate>December 2010</creationDate>
+    <copyright>Copyright (C) 2010 University of Geneva.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>laurent.opprecht@unige.ch</authorEmail>
+    <authorUrl>www.unige.ch</authorUrl>
+    <version>1.5</version>
+    <description>Handles user authentication through server authentication</description>
+    <files>
+        <filename plugin="server">server.php</filename>
+    </files>
+    <params>
+        <param name="user_name" type="text" default="Shib-SwissEP-UniqueID" label="User name" description="The server field's name used to read the user name." />
+        <param name="email" type="text" default="Shib-InetOrgPerson-mail" label="Email" description="The server field's name used to read the user email." />
+        <param name="first_name" type="text" default="Shib-InetOrgPerson-givenName" label="First name" description="The server field's name used to read the user first name." />
+        <param name="last_name" type="text" default="Shib-Person-surname" label="Last name" description="The server field's name used to read the user last name." />
+        <param name="language" type="text" default="Shib-InetOrgPerson-preferredLanguage" label="Language" description="The server field's name used to read the user language." />
+    </params>
+</install>
