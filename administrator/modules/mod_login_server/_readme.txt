@@ -49,6 +49,7 @@ INSTALLATION
         click on Login Web Server Authentication
 
         activate the module
+        set its position to Login so it doesn't show on other pages.
         enter the title you want to have displayed on the login page
         enter the web server field name used to identify the logged in user
         add additional parameters as you see fit
