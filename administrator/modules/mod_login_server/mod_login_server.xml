@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install type="module" version="1.5.0" client="administrator">
+<extension type="module" version="1.7.0" client="administrator">
     <name>Login Web Server Authentication</name>
     <author>Laurent Opprecht</author>
     <creationDate>December 2010</creationDate>
@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
     <authorEmail>laurent.opprecht@unige.ch</authorEmail>
     <authorUrl>www.unige.ch</authorUrl>
-    <version>1.5.0</version>
+    <version>1.7.0</version>
     <description>This module display a login screen for web server authentication. If the web server provides a user's information the modules tries to log him.</description>
     <files>
         <filename module="mod_login_server">mod_login_server.php</filename>
@@ -16,6 +16,20 @@
         <filename >icon.gif</filename>
         <filename>_readme.txt</filename>
     </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="username" type="text" default="Shib-SwissEP-UniqueID" label="User name field name" description="The name of the server field used to uniquely name the user." />
+                <field name="pretext" type="textarea" cols="30" rows="5" default="" label="Pre-text" description="The text that appears before the login link." />
+                <field name="posttext" type="textarea" cols="30" rows="5" label="Post-text" description="The text that appears after the login link." />
+                <field name="displayicon" type="radio" default="1" label="Display icon" description="If true display an icon link. If false display a text link.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="linktext" type="text" default="SWITCHaai" label="Link text" description="The text of the login link." />
+            </fieldset>
+        </fields>
+    </config>
     <params>
         <param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
             <option value="0">Never</option>
@@ -29,4 +43,4 @@
         </param>
         <param name="linktext" type="text" default="SWITCHaai" label="Link text" description="The text of the login link." />
     </params>
-</install>
+</extension>

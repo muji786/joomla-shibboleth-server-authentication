@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install type="module" version="1.5.0">
+<extension 
+	type="module"
+	version="1.7"
+	client="site">
     <name>Login Web Server Authentication</name>
     <author>Laurent Opprecht</author>
     <creationDate>December 2010</creationDate>
@@ -7,7 +10,7 @@
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
     <authorEmail>laurent.opprecht@unige.ch</authorEmail>
     <authorUrl>www.unige.ch</authorUrl>
-    <version>1.5.0</version>
+    <version>1.7.0</version>
     <description>This module displays a login link for web server authentication. If the web server provides a user name then the module tries to log in the user.</description>
     <files>
         <filename module="mod_login_server">mod_login_server.php</filename>
@@ -19,25 +22,30 @@
         <filename>/tmpl/icon.gif</filename>
         <filename>/tmpl/index.html</filename>
     </files>
-    <params>
-        <param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
-            <option value="0">Never</option>
-        </param>
-        <param name="username" type="text" default="Shib-SwissEP-UniqueID" label="User name field name" description="The name of the server field used to uniquely name the user." />
-        <param name="pretext" type="textarea" cols="30" rows="5" default="" label="Pre-text" description="The text that appears before the login link." />
-        <param name="posttext" type="textarea" cols="30" rows="5" label="Post-text" description="The text that appears after the login link." />
-        <param name="greeting" type="radio" default="1" label="Greeting" description="Show/Hide the greeting text">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-        <param name="displayicon" type="radio" default="1" label="Display icon" description="If true display an icon link. If false display a text link.">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-        <param name="linktext" type="text" default="SWITCHaai" label="Link text" description="The text of the login link." />
-        <param name="name" type="list" default="0" label="Name/Username" description="Display either the user name or the full name if greeting is turned on.">
-            <option value="0">Username</option>
-            <option value="1">Name</option>
-        </param>
-    </params>
-</install>
+    <languages>
+        <language tag="en-GB">en-GB.mod_login.ini</language>
+        <language tag="en-GB">en-GB.mod_login.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="username" type="text" default="Shib-SwissEP-UniqueID" label="User name field name" description="The name of the server field used to uniquely name the user." />
+                <field name="pretext" type="textarea" cols="30" rows="5" default="" label="Pre-text" description="The text that appears before the login link." />
+                <field name="posttext" type="textarea" cols="30" rows="5" label="Post-text" description="The text that appears after the login link." />
+                <field name="greeting" type="radio" default="1" label="Greeting" description="Show/Hide the greeting text">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="displayicon" type="radio" default="1" label="Display icon" description="If true display an icon link. If false display a text link.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="linktext" type="text" default="SWITCHaai" label="Link text" description="The text of the login link." />
+                <field name="name" type="list" default="1" label="Name/Username" description="Display either the user name or the full name if greeting is turned on.">
+                    <option value="0">Username</option>
+                    <option value="1">Name</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

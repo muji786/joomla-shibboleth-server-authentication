@@ -34,14 +34,18 @@ class modLoginServerHelper {
         $modules = array();
 
         $db = & JFactory::getDBO();
-        $query = 'SELECT id, title, module, position, content, showtitle, control, params'
+        /**
+         * client_id = 1 means admin access
+         * client_id = 0 means frontend access
+         */
+        $query = 'SELECT * '
                 . ' FROM #__modules AS m'
-                . " WHERE m.module = 'mod_login_server'";
+                . " WHERE m.module = 'mod_login_server' AND client_id=1";
         $db->setQuery($query);
 
         $modules = $db->loadObjectList();
         $params = is_array($modules) ? reset($modules)->params : false;
-        $params = $params ? new JParameter($params) : null;
+        $params = $params !== false ? new JParameter($params) : null;
         self::$params = $params;
 
 
@@ -124,7 +128,7 @@ class modLoginServerHelper {
     /**
      * Tries to login the web server user with a dummy passsword.
      *
-     * @global JFrame $mainframe
+     * @global JFrame $app
      * @return bool
      */
     static function login() {
@@ -139,11 +143,11 @@ class modLoginServerHelper {
 
         $options = array(self::PARAM_REMEMBER => true);
 
-        global $mainframe;
-        $result = $mainframe->login($credentials, $options);
+        global $app;
+        $result = $app->login($credentials, $options);
         if (!JError::isError($result)) {
             $redirect = JRoute::_('index.php');
-            $mainframe->redirect($redirect);
+            $app->redirect($redirect);
         }
         return $result;
     }

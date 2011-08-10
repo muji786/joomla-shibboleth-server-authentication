@@ -56,7 +56,7 @@ INSTALLATION
         copy
             secured.php
         from the package's directory to
-            /Joomla/administrator/secured.php
+            /Joomla/secured.php
 
         Then secure the web page's access in your web server.
         For example to secure the web page in apache using the Shibboleth security module add

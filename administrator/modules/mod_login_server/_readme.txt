@@ -71,16 +71,19 @@ INSTALLATION
 
 4 - modify the login template
 
-        copy
-            login.php
-        from the package's directory to
-            /Joomla/administrator/templates/khepri/login.php
+        Identify the templates used:
+           go to admin->extention->Template Manager
+           check which one is used for administration
 
-    or
+        go to 
+
+            /Joomla/administrator/templates/(your template)/login.php
+
+
         add the following line
+
             <jdoc:include type="module" name="mod_login_server" />
-        in
-            /Joomla/administrator/templates/khepri/login.php
+            
         wherever you see fit
 
 5 - install/configure additional module if not already done

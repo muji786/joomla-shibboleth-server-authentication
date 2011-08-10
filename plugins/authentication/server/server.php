@@ -48,7 +48,7 @@ class plgAuthenticationServer extends JPlugin {
      * @return	boolean
      * @since 1.5
      */
-    public function onAuthenticate($credentials, $options, JAuthenticationResponse &$response) {
+    public function onUserAuthenticate($credentials, $options, JAuthenticationResponse &$response) {
         if($this->is_authenticated()){
             $response->status = JAUTHENTICATE_STATUS_SUCCESS;
             $response->error_message = '';

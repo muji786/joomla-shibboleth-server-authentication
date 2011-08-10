@@ -75,7 +75,7 @@ class modLoginServerHelper {
 
     /**
      * Tries to login the user provided by the web server.
-     * @global JApplicatoin $mainframe
+     * @global JApplicatoin $app
      * @return bool
      */
     static function login() {
@@ -90,11 +90,11 @@ class modLoginServerHelper {
 
         $options = array(self::PARAM_REMEMBER => true);
 
-        global $mainframe;
-        $result = $mainframe->login($credentials, $options);
+        global $app;
+        $result = $app->login($credentials, $options);
         if (!JError::isError($result)) {
             $redirect = JRoute::_('index.php');
-            $mainframe->redirect($redirect);
+            $app->redirect($redirect);
         }
         return $result;
     }

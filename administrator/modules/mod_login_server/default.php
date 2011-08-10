@@ -7,17 +7,15 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-//$lang = & JFactory::getLanguage();
-
 if (trim($title)) {
-    echo "<h1>$title</h1>";
+    echo "<h3>$title</h3>";
 }
 
 echo $params->get('pretext');
 
 echo '<a href="' . JRoute::_('secured.php') . '">';
     if($display_icon){
-        echo '<img src="' . JURI::base() . 'modules/mod_login_server/icon.gif" alt="' . $link_text  . '">';
+        echo '<img src="' . JURI::base() . 'modules/mod_login_server/icon.gif" alt="' . $link_text  . '" />';
     }else{
         echo $link_text;
     }
